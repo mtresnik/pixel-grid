@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	
+	<head>
+		<title> Render Pixel Grid </title>
+		<link href="style.css" type="text/css" rel="stylesheet">
+		<!--Header Portion-->
+	</head>
+		
+	<body>
+	
+		<button id="feedback" onclick="openNav()">&gt;</button>
+		
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href="#" onclick="clearGrid()">Clear Grid</a>
+			<a>
+				<label class="container">Pixel
+				<input id="pixelRadio" type="radio" checked="checked" name="radio" onclick="setDrawMode('pixel')">
+				<span class="checkmark"></span>
+				</label>
+			</a>
+			<a>
+				<label class="container">Line
+				<input type="radio" name="radio"  onclick="setDrawMode('line')">
+				<span class="checkmark"></span>
+				</label>
+			</a>
+			<a>
+				<label class="container">Circle
+				<input type="radio" name="radio" onclick="setDrawMode('circle')">
+				<span class="checkmark"></span>
+				</label>
+			</a>
+			<a>
+			<div id="hovered"> Hovered: </div>
+			</a>
+			<a>
+			<div id="selected1"> Selected: </div>
+			<div id="selected2"></div>
+			<div id="selected3"></div>
+			</a>
+			<a>
+			Color: <input id="colorChoice" type="color" value="#ff0000" onchange="colorChanged()">
+			</a>
+			<a>
+				<label class="container">Random Color
+				<input id="randomCheck" type="checkbox" checked="false"  name="randomCheck" onclick="setRandom()">
+				<span class="checkmark"></span>
+				</label>
+			</a>
+		</div>
+		
+		<div id="main">
+			<canvas id="glCanvas" onmouseleave="canvasOnMouseLeave()" onmouseenter="canvasOnMouseEnter()" ></canvas>
+		</div>
+		
+		<script type="text/javascript" src="js/main.js"></script>	
+		<script type="text/javascript" src="js/render/triangles.js"></script>
+		<script type="text/javascript" src="js/render/quads.js"></script>
+		<script type="text/javascript" src="js/render/cubes.js"></script>
+		<script type="text/javascript" src="js/grid.js"></script>
+		<script language="javascript">
+			main();
+		</script>
+	</body>
+	
+</html>
